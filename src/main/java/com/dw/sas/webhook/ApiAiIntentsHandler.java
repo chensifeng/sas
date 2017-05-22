@@ -16,7 +16,7 @@ import com.dw.sas.webhook.envelope.response.WebhookResponseEnvelope;
 @RequestMapping("/webhook")
 public class ApiAiIntentsHandler {
 
-    @RequestMapping(value = "/envelope", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<WebhookResponseEnvelope> testEnvelope(@RequestBody WebhookRequestEnvelope request) {
         ResponseFactory responseFactory = new ResponseFactory();
         return new ResponseEntity<>(responseFactory.create(request.getResult()), HttpStatus.OK);
